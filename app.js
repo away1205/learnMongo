@@ -7,8 +7,10 @@ const uri = "mongodb://0.0.0.0:27017/";
 //Mongoose 7.3.1
 const mongoose = require('mongoose');
 
+//Connect to Server - the path refer to the name of DB
 mongoose.connect('mongodb://127.0.0.1:27017/personDB');
 
+//Making schema
 const personSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -17,8 +19,10 @@ const personSchema = new mongoose.Schema({
   age: Number
 })
 
+//Making model -- collection
 const Person = new mongoose.model('Person', personSchema);
 
+//exp of construct new data
 const opang = new Person({
   name: 'opang',
   age: 12
@@ -58,7 +62,7 @@ async function deletePerson(value){
 
 
 
-
+/* -------- Using MongoDB Native Driver -------- */
 
 // const client = new MongoClient(uri);
 
